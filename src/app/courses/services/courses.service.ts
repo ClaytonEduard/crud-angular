@@ -7,17 +7,18 @@ import { delay, first, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class CoursesService {
-
-  private readonly API = '/assets/courses.json'
+  // inserindo dados da api spring java
+  // para acessar devemos criar um prox pois o CORS não deixa acessarmos o dominos
+  private readonly API = 'api/courses'
 
   constructor(private httpClient: HttpClient) { }
 
   list() {
     return this.httpClient.get<Course[]>(this.API)
-    .pipe(
-      first(),
-      //delay(5000),
-      tap(courses => console.log(courses))
-    );
+      .pipe(
+        first(),
+        //delay(5000),
+        tap(courses => console.log(courses))
+      );
   }
 }
