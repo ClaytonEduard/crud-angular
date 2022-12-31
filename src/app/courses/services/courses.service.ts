@@ -21,4 +21,12 @@ export class CoursesService {
         tap(courses => console.log(courses))
       );
   }
+
+  // metodo enviar
+  save(record: Course) {
+    // enviando dados como HttpClient pelo post
+    // busca o http envia pelo post, passando um objeto do tipo curso com API back-end
+    return this.httpClient.post<Course>(this.API, record).pipe(first());
+  }
+
 }
