@@ -23,7 +23,7 @@ export class CoursesService {
   }
 
   // metodo enviar
-  save(record: Course) {
+  save(record: Partial<Course>) {
     // enviando dados como HttpClient pelo post
     // busca o http envia pelo post, passando um objeto do tipo curso com API back-end
     return this.httpClient.post<Course>(this.API, record).pipe(first());
