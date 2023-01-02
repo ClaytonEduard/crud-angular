@@ -22,6 +22,12 @@ export class CoursesService {
       );
   }
 
+  // metodo listar unico curso
+  loadById(id:string){
+    return this.httpClient.get<Course>(`${this.API}/${id}`);
+  }
+
+
   // metodo enviar
   save(record: Partial<Course>) {
     // enviando dados como HttpClient pelo post
