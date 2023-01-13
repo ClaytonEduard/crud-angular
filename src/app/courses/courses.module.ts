@@ -8,13 +8,14 @@ import { CourseFormComponent } from './containers/course-form/course-form.compon
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './containers/courses/courses.component';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
+import { ConfirmationDialogComponent } from '../shared/components/confirmation-dialog/confirmation-dialog.component';
 
 
 @NgModule({
   declarations: [
     CoursesComponent,
     CourseFormComponent,
-    CoursesListComponent
+    CoursesListComponent,
   ],
   imports: [
     CommonModule,
