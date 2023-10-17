@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Resolve,
+import {
+  Resolve,
   RouterStateSnapshot,
   ActivatedRouteSnapshot
 } from '@angular/router';
@@ -18,6 +19,6 @@ export class CourseResolver implements Resolve<Course> {
     if (route.params && route.params['id']) {
       return this.service.loadById(route.params['id']);
     }
-    return of({ _id: '', name: '', category: '' });
+    return of({ _id: '', name: '', category: '', lessons: [] });
   }
 }
