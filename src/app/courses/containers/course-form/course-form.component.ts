@@ -62,10 +62,20 @@ export class CourseFormComponent implements OnInit {
     });
   }
 
-// metodo para listar as licoes da aula
- getLessonsFormArray(){
-  return (<UntypedFormArray>this.form.get('lessons')).controls;
-}
+  // metodo para listar as licoes da aula
+  getLessonsFormArray() {
+    return (<UntypedFormArray>this.form.get('lessons')).controls;
+  }
+  //metodo criar licoes
+  addNewLesson() {
+    const lessons = this.form.get('lessons') as UntypedFormArray;
+    lessons.push(this.createLesson());
+  }
+  // metodo remover licao
+  removeLesson(index: number) {
+    const lessons = this.form.get('lessons') as UntypedFormArray;
+    lessons.removeAt(index);
+  }
 
 
   onSubmit() {
